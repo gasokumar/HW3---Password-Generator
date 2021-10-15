@@ -25,6 +25,8 @@ var specialChar = "";
 
 // Create generatePassword();
 function generatePassword() {
+  var password = "Meep";
+  var passwordRender = "";
   var passLength = window.prompt(
     "How long do you want your password to be? (8-128 characters!)"
   );
@@ -44,10 +46,23 @@ function generatePassword() {
   window.alert(responseLength);
 
   var lowercaseCharacters = window.confirm(
-    "Do you want to include lowercase characters?"
+    "Do you want to include lowercase characters in your password?"
   );
-
-  var password = "Yeehaw";
+  if (lowercaseCharacters) {
+    passwordRender += lowercaseChar;
+  }
+  var uppcaseCharacters = window.confirm(
+    "Do you want to include uppercase characters in your password?"
+  );
+  if (uppercaseCharacters) {
+    passwordRender += uppercaseChar;
+  }
+  var numericalChar = window.confirm(
+    "Do you want to include numbers in your password?"
+  );
+  if (numericalChar) {
+    passwordRender += uppercaseChar;
+  }
   return password;
 }
 
