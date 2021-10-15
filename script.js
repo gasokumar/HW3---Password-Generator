@@ -18,17 +18,20 @@ function writePassword() {
 
   // The last two lines link the text of the password output field and replaces it with the output of the generatePassword function
 }
+var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numericalChar = "0123456789";
+var specialChar = "";
 
 // Create generatePassword();
 function generatePassword() {
   var passLength = window.prompt(
     "How long do you want your password to be? (8-128 characters!)"
   );
+  // passLength = parseInt(passwordLength);
   var responseLength;
 
-  if (passLength.IsInteger == false) {
-    responseLength = "Must be an integer!";
-  } else if (passLength == 0) {
+  if (passLength == 0) {
     responseLength = "Can't be 0!";
   } else if (passLength < 8) {
     responseLength = "Needs to be longer!";
@@ -40,7 +43,11 @@ function generatePassword() {
 
   window.alert(responseLength);
 
-  var password = "asokumar";
+  var lowercaseCharacters = window.confirm(
+    "Do you want to include lowercase characters?"
+  );
+
+  var password = "Yeehaw";
   return password;
 }
 
