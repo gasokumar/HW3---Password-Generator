@@ -21,11 +21,11 @@ function writePassword() {
 var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericalChar = "0123456789";
-var specialChar = "";
+var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 // Create generatePassword();
 function generatePassword() {
-  var password = "Meep";
+  var password = "";
   var passwordRender = "";
   var passLength = window.prompt(
     "How long do you want your password to be? (8-128 characters!)"
@@ -57,14 +57,21 @@ function generatePassword() {
   if (uppercaseCharacters) {
     passwordRender += uppercaseChar;
   }
-  var numericalChar = window.confirm(
+  var numericalCharacters = window.confirm(
     "Do you want to include numbers in your password?"
   );
-  if (numericalChar) {
-    passwordRender += uppercaseChar;
+  if (numericalCharacters) {
+    passwordRender += numericalChar;
   }
-  return password;
+  var specialCharacters = window.confirm("Do you want to include specialCharacters in your password?")
+  if (specialCharacters) {
+    passwordRender += specialChar;
+  }
+for (var i = 0; i < passLength, i++) {
+  password = passwordRender[Math.floor(Math.random() * passwordRender.length)]
 }
+  return password;
+
 
 // USER INTERACTIONS ========================================
 // Add event listener to generate button
