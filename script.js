@@ -73,7 +73,7 @@ function generatePassword() {
     password =
       passwordRender[Math.floor(Math.random() * passwordRender.length)];
   }
-  console.log(password);
+  console.log(passwordRender);
   return password;
 }
 
