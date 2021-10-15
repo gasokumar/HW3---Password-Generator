@@ -70,7 +70,7 @@ function generatePassword() {
     passwordRender += specialChar;
   }
   for (var i = 0; i < passLength; i++) {
-    password =
+    password +=
       passwordRender[Math.floor(Math.random() * passwordRender.length)];
   }
   console.log(passwordRender);
