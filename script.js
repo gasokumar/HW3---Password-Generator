@@ -21,7 +21,7 @@ function writePassword() {
 var lowercaseChar = "abcdefghijklmnopqrstuvwxyz";
 var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericalChar = "0123456789";
-var specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+var specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Create generatePassword();
 function generatePassword() {
@@ -51,7 +51,7 @@ function generatePassword() {
   if (lowercaseCharacters) {
     passwordRender += lowercaseChar;
   }
-  var uppcaseCharacters = window.confirm(
+  var uppercaseCharacters = window.confirm(
     "Do you want to include uppercase characters in your password?"
   );
   if (uppercaseCharacters) {
@@ -63,15 +63,19 @@ function generatePassword() {
   if (numericalCharacters) {
     passwordRender += numericalChar;
   }
-  var specialCharacters = window.confirm("Do you want to include specialCharacters in your password?")
+  var specialCharacters = window.confirm(
+    "Do you want to include special characters in your password?"
+  );
   if (specialCharacters) {
     passwordRender += specialChar;
   }
-for (var i = 0; i < passLength, i++) {
-  password = passwordRender[Math.floor(Math.random() * passwordRender.length)]
-}
+  for (var i = 0; i < passLength; i++) {
+    password =
+      passwordRender[Math.floor(Math.random() * passwordRender.length)];
+  }
+  console.log(password);
   return password;
-
+}
 
 // USER INTERACTIONS ========================================
 // Add event listener to generate button
@@ -80,13 +84,6 @@ generateBtn.addEventListener("click", writePassword);
 
 // INITIALIZATIONS (GETTING THINGS STARTED) ================
 
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
 // WHEN asked for character types to include in the password
 // THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 // WHEN I answer each prompt
@@ -94,4 +91,4 @@ generateBtn.addEventListener("click", writePassword);
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
 // WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
+// THEN the password is either displayed in an alert or written to the
