@@ -35,10 +35,16 @@ function generatePassword() {
 
   if (passLength == 0) {
     responseLength = "Can't be 0!";
+    window.alert(responseLength);
+    return;
   } else if (passLength < 8) {
     responseLength = "Needs to be longer!";
+    window.alert(responseLength);
+    return;
   } else if (passLength > 128) {
     responseLength = "Needs to be shorter!";
+    window.alert(responseLength);
+    return;
   } else {
     responseLength = "Your password will be " + passLength + " digits long";
   }
